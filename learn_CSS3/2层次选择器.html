@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title> 使用 CSS3 层次选择器 </title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding:0;
+		}
+		body {
+			width: 300px;
+			margin: 0 auto;
+		}
+		div{
+			margin:5px;
+			padding:5px;
+			border: 1px solid #ccc;
+		}
+		
+		/*后代选择器*/
+		/*也称：包含选择器*/
+		/*后代选择器两选择符之间必须以空格隔开， 中间不能有任何其他符号插入。*/
+		div div {
+			background: orange;
+		}
+	
+		/*子选择器*/
+		/*选择第一个孩子*/
+		body > div {
+			background: green;
+		}
+
+		
+		/*相邻兄弟选择器*/
+		/*接下来的第一个兄弟*/
+		.active + div {
+			background: lime;
+		}
+
+		/*通用兄弟选择器*/
+		/*接下来的所有兄弟*/
+		.active ~ div {
+			background: red;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="active">1</div>
+	<!-- 为了说明相邻兄弟选择器，在此处添加一个类名 active -->
+	<div>2</div>
+	<div>3</div>
+	<div>4
+		<div>5</div>
+		<div>6</div>
+	</div>
+	<div>7
+		<div>8
+			<div>9
+				<div>10</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

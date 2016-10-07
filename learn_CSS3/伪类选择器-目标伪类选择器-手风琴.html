@@ -1,0 +1,105 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title> 垂直手风琴 </title>
+<style type="text/css">
+	.accordionMenu {
+		background: #fff;
+		color:#424242;
+		font: 12px Arial, Verdana, sans-serif;
+		margin:0 auto;
+		padding: 10px;
+		width: 500px;
+	}
+	.accordionMenu h2 {
+		margin:5px 0;padding:0;
+		position: relative;
+	}
+
+	/* 制作向下三角效果 */
+	.accordionMenu h2:before {
+		border: 5px solid #fff;
+		border-color: #fff transparent transparent;
+		content:"";
+		height: 0;
+		position:absolute;
+		right: 10px;
+		top: 15px;
+		width: 0;
+	}
+
+	/* 制作手风琴标题栏效果 */
+	.accordionMenu h2 a {
+		background: #8f8f8f;
+		background: -moz-linear-gradient( top, #cecece, #8f8f8f);
+		background: -webkit-gradient(linear, left top, left bottom,
+		from(#cecece), to(#8f8f8f));
+		background: -webkit-linear-gradient( top, #cecece, #8f8f8f);
+		background: -o-linear-gradient( top, #cecece, #8f8f8f);
+		background: linear-gradient( top, #cecece, #8f8f8f);
+		border-radius: 5px;
+		color:#424242;
+		display: block;
+		font-size: 13px;
+		font-weight: normal;
+		margin:0;
+		padding:10px 10px;
+		text-shadow: 2px 2px 2px #aeaeae;
+		text-decoration:none;
+	}
+	.accordionMenu :target h2 a, /* 目标标题的效果 */
+	.accordionMenu h2 a:focus,
+	.accordionMenu h2 a:hover,
+	.accordionMenu h2 a:active {
+		background: #2288dd;
+		background: -moz-linear-gradient( top, #6bb2ff, #2288dd);
+		background: -webkit-gradient(linear, left top, left bottom,
+		from(#6bb2ff), to(#2288dd));
+		background: -webkit-linear-gradient( top, #6bb2ff, #2288dd);
+		background: -o-linear-gradient( top, #6bb2ff, #2288dd);
+		background: linear-gradient( top, #6bb2ff, #2288dd);
+		color:#FFF;
+	}
+
+	/* 标题栏对应的内容 */
+	.accordionMenu p {
+		margin:0;
+		height: 0;/* 默认栏目内容高度为 0，达到隐藏效果 */
+		overflow: hidden;
+		padding:0 10px;
+		-moz-transition: height 0.5s ease-in;
+		-webkit-transition: height 0.5s ease-in;-o-transition: height 0.5s ease-in;
+		transition: height 0.5s ease-in;
+	}
+
+
+	/* 这部分是显示内容的关键代码 */
+	.accordionMenu :target p {/* 展开对应目标内容 */
+		height:100px;/* 显示对应目标栏内容 */
+		overflow: auto;
+	}
+
+	/* 展开时标题三角效果 */
+	.accordionMenu :target h2:before {
+		border-color: transparent transparent transparent #fff;
+	}
+</style>
+</head>
+<body>
+<div class="accordionMenu">
+<div class="menuSection" id="brand">
+<h2><a href="#brand">Brand</a></h2>
+<p>Lorem ipsum dolor...</p>
+</div>
+<div class="menuSection" id="promotion">
+<h2><a href="#promotion">Promotion</a></h2>
+<p>Lorem ipsum dolor sit amet...</p>
+</div>
+<div class="menuSection" id="event">
+<h2><a href="#event">Event</a></h2>
+<p>Lorem ipsum dolor sit amet...</p>
+</div>
+</div>
+</body>
+</html>

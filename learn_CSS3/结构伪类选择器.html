@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS3 ½á¹¹Î±Ñ¡ÔñÆ÷µÄÊ¹ÓÃ </title>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+
+	ul {
+		margin: 50px auto;
+		width: 400px;
+		list-style: none outside none;
+	}
+	li {
+		display:inline-block;
+		margin: 5px;
+		padding: 5px;
+		width:50px;
+		height: 50px;
+		font: bold 30px/50px arial;
+		background: #000;
+		color: #fff;
+		border-radius: 50px;
+		text-align: center;
+	}
+	ul>li:first-child {
+		background-color: green;
+	}
+	ul>li:last-child {
+		background-color: blue;
+	}
+	ul>li:nth-child(3){
+		background-color: yellow;
+	}
+	ul>li:nth-child(n){
+		background-color: orange;
+	}
+	ul>li:nth-child(2n){
+		background-color: blue;
+	}
+	ul>li:nth-child(2n+1){
+		background-color: blue;
+	}
+
+	/*第 5 个 li 元素开始直到最后一个 li 元素*/
+	ul>li:nth-child(n+5){
+		background-color: #696;
+	}
+
+	/*第 1 个到第 5 个子元素*/
+	ul>li:nth-child(-n+5){
+		background-color: blue;
+	}
+
+	/*隔 3 个子元素选中一个子元素*/
+	ul > li:nth-child(4n+1){
+		background-color: blue;
+	}
+	
+	/*倒数第 4 个 li 元素*/
+	ul>li:nth-last-child(4){
+		background-color: #9f9;
+	}
+
+	ul>li:nth-last-child(odd){
+		background-color: blue
+	}
+
+	ul>li:nth-of-type(3){
+		background-color:orange;
+	}
+
+	ul .onli-of-type{
+		border:1px solid #ccc;
+		margin-top: 10px;
+		text-align: center;
+	}
+	ul > div:only-of-type{
+		background-color: #ffc;
+	}
+
+
+	/*:only-child 测试*/
+	.post {
+		width: 300px;
+		margin: 20px auto;
+		padding: 5px;
+		border: 1px solid #ccc;
+	}
+	p {
+		background: green;
+		color: #fff;
+		border: 1px solid orange;
+		padding: 5px;
+	}
+
+	/*当匹配元素的父元素中仅有一个子元素的时候才会被选中*/
+	.post>p:only-child {
+		border-width:2px;
+		background-color:#000;
+	}
+</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+		<li>11</li>
+		<li>12</li>
+		<li>13</li>
+		<li>14</li>
+		<li>15</li>
+		<li>16</li>
+		<li>17</li>
+		<li>18</li>
+		<li>19</li>
+		<li>20</li>
+		<div class="onli-of-type">:only of type</div>
+	</ul>
+
+
+	<!-- :only-child 测试 -->
+	<div class="post">
+		<p> 我是第一个段落 </p>
+		<p> 我是第二个段落 </p>
+	</div>
+	<div class="post">
+		<p> 我就一个段落 </p>
+	</div>
+</body>
+</html>
