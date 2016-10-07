@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>构造函数模式 + 原型模式</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+//通过构造函数模式定义实例属性
+function Person(name,age,job) {
+	this.name = name;
+	this.age = age;
+	this.job = job;
+	this.friends = ["One","Two"];
+}
+
+//通过原型模式定义共有属性
+Person.prototype = {
+	constructor: Person,//什么作用？？？？？？？？？？
+	sayName: function () {
+		alert(this.name);
+	}
+}
+var person1 = new Person("Nicholas",29,"Soft");
+var person2 = new Person("Jack",29,"Nurse");
+
+//给某个实例 person1 添加一个自己的属性值，则只会影响 person1 自己，也就是说，这个值只被添加进了实例中，而没有被加进原型中
+person1.friends.push("Three");
+
+alert(person1.friends);
+alert(person2.friends);
+
+alert(person1.friends === person2.friends);
+alert(person1.sayName === person2.sayName);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+﻿<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+function Person(){
+	//构造函数是空的，在 new 的时候，用的是构造方法没错；但是在调用方法 sayName 的时候，在构造函数中是找不到的，指向的是 Person 的原型，原型中才有 sayName
+}
+
+/*
+	原型的设置方法，当然，也可以用对象字面量的方式来做，那样更好
+ */
+Person.prototype.name = "Nicholas";
+Person.prototype.age = 23;
+Person.prototype.job = "Doctor";
+Person.prototype.sayName = function () {
+	alert(this.name);
+}
+
+var person1 = new Person();
+var person2 = new Person();
+
+/*
+	在实例中设置了属性，会覆盖掉原型中的属性，或者说访问不到原型中的属性了
+ */
+person1.name = "Biang";
+person1.sayName();
+person2.sayName();
+
+/*
+	hasOwnProperty("属性")，用来判断属性在不在实例自己身上
+ */
+alert("person1 有没有自己的属性：" + person1.hasOwnProperty("name"));
+alert("person2 有没有自己的属性：" + person2.hasOwnProperty("name"));
+
+/*
+	in 操作符
+ */
+alert("name" in person1);//始终都返回 true ，要么是直接在对象上访问到的，要么是访问了原型后得到的
+alert("name" in person2);
+
+
+/*
+	通过 in 操作符和 hasOwnProperty() 的方法，构造一个 hasPrototypeProperty() 的方法
+	用来判断属性在不在原型中
+ */
+function hasPrototypeProperty(object, name) {
+	//对象自己没有这个属性 && 这个属性又可以被访问到，说明这个属性在原型中
+	return !object.hasOwnProperty && (name in object);
+}
+var person3 = new Person();
+alert("person3 能不能访问原型中的属性：" + hasPrototypeProperty(person3,"name"));
+person3.name = "GO";
+alert("给实例 person3 设置了属性之后，能不能访问到原型中的属性：" + hasPrototypeProperty(person3,"name"));
+
+
+/*
+	通过 delete 操作符删掉实例中的属性
+ */
+delete person1.name;
+person1.sayName();
+person2.sayName();
+
+
+alert("两个实例的方法 sayName 是否类型相同");
+alert(person1.sayName === person2.sayName);
+
+/*
+	通过 keys() 方法获取所有可枚举属性
+	通过 getOwnPropertyNames() 方法获取所有不可枚举属性
+ */
+var keys = Object.keys(Person.prototype);
+alert("所有可枚举属性："+keys);
+var keys = Object.getOwnPropertyNames(Person.prototype);
+alert("所有不可枚举属性："+keys);
+
+
+
+/*
+	原型的动态性：即，可以动态地为原型添加方法。这种添加会实时地在每个实例中生效
+ */
+var friend = new Person(){
+
+}
+Person.prototype.sayHi = function () {
+	alert("hi");
+}
+friend.sayHi();
+
+
+
+
+
+/*
+	原型对象的问题：用 push() 给某个实例添加了属性值，会导致整个原型都拥有了这个属性值，进而导致每个其他的实例也拥有了这个属性值，而这可能是并不需要的
+	
+	问题：如果是实例本身就有了这个属性值呢？
+ */
+function Person(){
+
+}
+Person.prototype = {
+	constructor: Person,
+	name:"Nicholas",
+	age:29,
+	job:"Soft",
+	friends:["One","Two"],//给原型中添加一个 friends 的属性，这相当于每个实例的共同的朋友
+	sayName:function(){
+		alert(this.name);
+	}
+}
+var person_Carl = new Person();
+var person_Anna = new Person();
+
+alert("push 之前："+person_Carl.friends);
+alert("push 之前："+person_Anna.friends);
+
+person_Anna.friends.push("Three");//给 Anna 添加一个 friend ，
+
+alert("push 之后："+person_Carl.friends);//结果连 Carl 也有了这个 friend，这不科学
+alert("push 之后："+person_Anna.friends);
+alert(person_Carl.friends === person_Anna.friends);
+
+
+</script>
+</body>
+</html>

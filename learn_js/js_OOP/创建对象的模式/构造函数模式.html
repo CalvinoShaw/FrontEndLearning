@@ -1,0 +1,39 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+function Person(name, age, job) {
+	this.name = name;//直接将属性和方法赋给this
+	this.age = age;
+	this.job = job;
+	this.sayName = function () {//实际上这里相当于new了一个对象（函数即对象），每一个 Person 对象实例的方法是不同的
+		alert(this.name);
+	}
+	//没有返回值
+}
+
+var person1 = new Person("Biang", 1 , "Tech");//在调用时new
+var person2 = new Person("Greg", 2, "Doctor");
+
+person1.sayName();
+person2.sayName();
+
+alert(person1 instanceof Object);
+alert(person2 instanceof Object);
+alert(person1 instanceof Person);//解决了对象识别的问题
+alert(person2 instanceof Person);
+
+
+//在另一个对象的作用域中调用
+var o = new Object();
+Person.call(o, "Third", 25, "Nurse");
+o.sayName();
+
+</script>
+</body>
+</html>

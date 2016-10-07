@@ -1,0 +1,23 @@
+﻿<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+function Person(name,age,job) {
+	var o = new Object();
+	o.sayName = function () {
+		alert(name);
+	};
+	return o;
+}
+var friend = Person("Nicholas",20,"Soft");
+friend.sayName();//除了使用 sayName()，没有其他办法访问 name 的值，即：不可能有别的办法访问传入到构造函数中的原始数据
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+
+/*
+	能使用其他的则不建议使用此模式
+ */
+function Person(name, age, job) {
+	var o = new Object();
+	o.name = name;
+	o.age = age;
+	o.job = job;
+	o.sayName = function () {
+		alert(this.name);
+	}
+	return o;
+}
+//以上部分和工厂模式一模一样，但将其称为 构造函数
+//但接下来调用的时候使用了 new ，而工厂模式是没有 new 的
+var friend = new Person("Nicholas",29,"Soft");
+friend.sayName();
+
+
+</script>
+</body>
+</html>

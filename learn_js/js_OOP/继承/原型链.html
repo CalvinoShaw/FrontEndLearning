@@ -1,0 +1,60 @@
+﻿<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+/*
+	SuperType 
+	有一个属性：property = true
+	有一个方法 getSuperValue()，用来返回 property
+ */
+function SuperType() {
+	this.property = true;
+}
+SuperType.prototype.getSuperValue = function (){
+	return this.property;
+}
+
+/*
+	SubType 
+	有一个属性：property = false
+	有一个方法 getSubValue()，用来返回 property
+ */
+function SubType() {
+	this.subproperty = false;
+}
+SubType.prototype.getSubValue = function () {
+	return this.subproperty;
+}
+
+
+//利用原型链实现继承的核心代码就这一行：让原型 = 另一个类型的实例
+SubType.prototype = new SuperType();
+
+var instance = new SubType();
+alert(instance.getSuperValue());
+//照理说，这是一个 SubType，不可能有 getSuperValue() 的方法，但是因为原型链，它可以有了
+
+
+
+/*
+	通过 SubType 重写 超类型 SuperType 中的 getSuperValue()方法，将原来的 true 改成 false
+ */
+SubType.prototype.getSuperValue = function(){
+	return false;
+}
+
+//两个实例都调用 getSuperValue() 的方法，
+var instance_sub = new SubType();
+var instance_super = new SuperType();
+alert("通过SubType调用" + instance_sub.getSuperValue());//变成了新的值 false，因为是通过这个sub重写方法的
+alert("通过SuperType调用" + instance_super.getSuperValue());//还是原来的值，说明还是通过原来的方法
+
+</script>
+</body>
+</html>

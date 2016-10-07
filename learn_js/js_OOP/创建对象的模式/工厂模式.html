@@ -1,0 +1,34 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+function createPerson(name, age, job) {
+	var o = new Object();//在函数里面new
+	o.name = name;
+	o.age = age;
+	o.job = job;
+	o.sayName = function () {
+		alert(this.name);
+	}
+	return o;//有返回值
+}
+
+var person1 = createPerson("Biang", 1 , "Tech");
+var person2 = createPerson("Greg", 2, "Doctor");
+
+person1.sayName();
+person2.sayName();
+
+alert(person1 instanceof Object);
+alert(person2 instanceof Object);
+alert(person1 instanceof Person);//只能识别 Object，但不能识别 Person，意味着不能识别对象类型
+alert(person2 instanceof Person);
+
+</script>
+</body>
+</html>

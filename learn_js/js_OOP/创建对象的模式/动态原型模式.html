@@ -1,0 +1,30 @@
+﻿<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+
+function Person(name,age,job) {
+	this.name = name;
+	this.age = age;
+	this.job = job;
+
+	//只有当 sayName() 不存在，才把它添加到原型中
+	//
+	//问题，sayName() 存在又是什么样的情况？
+	if(typeof this.sayName != "function"){
+		Person.prototype.sayName = function () {
+			alert(this.name);
+		}
+	}
+}
+var friend = new Person("Nicholas",20, "Soft");
+friend.sayName();
+</script>
+</body>
+</html>
