@@ -73,14 +73,22 @@
 		background-color:orange;
 	}
 
-	ul .onli-of-type{
+	ul .only-of-type{
 		border:1px solid #ccc;
 		margin-top: 10px;
 		text-align: center;
 	}
+
+
 	ul > div:only-of-type{
 		background-color: #ffc;
 	}
+
+	/*用来选择没有任何内容的元素*/
+	ul > div:empty{
+		background-color: #ffc;
+	}
+
 
 
 	/*:only-child 测试*/
@@ -102,6 +110,9 @@
 		border-width:2px;
 		background-color:#000;
 	}
+
+
+
 </style>
 </head>
 <body>
@@ -126,7 +137,9 @@
 		<li>18</li>
 		<li>19</li>
 		<li>20</li>
-		<div class="onli-of-type">:only of type</div>
+		<div class="only-of-type">:only of type</div>
+		<br>:empty
+		<p class="empty"></p>
 	</ul>
 
 

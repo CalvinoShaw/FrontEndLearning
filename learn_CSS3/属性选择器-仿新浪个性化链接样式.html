@@ -1,0 +1,112 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title> 创建个性化链接样式 </title>
+<style type="text/css">
+	a {
+		font-size: 16px;
+		text-decoration: none;
+		padding-right: 20px;
+		display: inline-block;
+		margin-bottom: 5px;
+		background: url(img/slide1.jpeg) no-repeat;/*该背景图片需为图标，在此仅作初步尝试*/
+	}
+
+	/* 匹配所有外部链接 */
+	a[href^="http://"]{
+		background-position: 1% -409px;
+	}
+
+	/* 匹配首页 */
+	a[href="home"]{
+		background-position: 1% -382px;
+	}
+
+	/* 匹配 .doc 文档 */
+	a[href$="doc"]{
+		background-position: 20% 0;
+	}
+
+	/* 匹配 .ppt 文档 */
+	a[href$="ppt"]{
+		background-position:20% -50px;
+	}
+
+	/* 匹配 .xls 文档 */
+	a[href$="xls"]{
+		background-position:20% -75px;
+	}
+
+	/* 匹配 .html 文档 */
+	a[href$="html"]{
+	background-position:20% -100px;
+	}
+
+	/* 匹配 .pdf 文档 */
+	a[href$="pdf"]{
+		background-position:20% -125px;
+	}
+
+	/* 匹配 .jpg,.gif,.png 图片 */
+	a[href$="jpg"],
+	a[href$="gif"],
+	a[href$="png"]{
+	background-position:20% -172px;
+	}
+
+	/* 匹配 .swf 文档 */
+	a[href$="swf"]{
+		background-position:20% -193px;
+	}
+
+	/* 匹配 .zip,.rar 压缩文档 */
+	a[href$="zip"],
+	a[href$="rar"]{
+		background-position:20% -217px;
+	}
+
+	/* 匹配 .mp3 文档 */
+	a[href$="mp3"]{
+		background-position:20% -245px;
+	}
+
+	/* 匹配 .exe 安装文件 */
+	a[href$="exe"]{
+		background-position:20% -273px;
+	}
+
+	/* 匹配 .txt 文本文档 */
+	a[href$="txt"]{
+		background-position:20% -298px;
+	}
+
+	/* 匹配邮箱地址 */
+	a[href^="mailto"]{
+		background-position:20% -350px;
+	}
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="http://www.w3cplus.com">w3cplus.com</a></li>
+		<li><a href="home">home</a></li>
+		<li><a href="a.doc">Word 文档 </a></li>
+		<li><a href="b.ppt">Powerpoint 文档 </a></li>
+		<li><a href="c.xls">Excel 文档 </a></li>
+		<li><a href="d.html">HTML 文档 </a></li>
+		<li><a href="e.pdf">PDF 文档 </a></li>
+		<li><a href="f.jpg">JPG 图片文档 </a></li>
+		<li><a href="f.gif">GIF 图片文档 </a></li>
+		<li><a href="f.png">PNG 图片文档 </a></li>
+		<li><a href="g.swf">Flash 文档 </a></li>
+		<li><a href="h.zip">ZIP 压缩文档 </a></li>
+		<li><a href="h.rar">RAR 压缩文档 </a></li>
+		<li><a href="j.mp3">MP3 文档 </a></li>
+		<li><a href="h.exe">EXE 安装文件 </a></li>
+		<li><a href="a.txt">TXT 文本文档 </a></li>
+		<li><a href="mailto:w3cplus@hotmial.com">w3cplus@hotmail.com</a></li>
+		<li><a href="#"> 本地链接 </a></li>
+	</ul>
+</body>
+</html>
