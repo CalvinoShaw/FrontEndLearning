@@ -6,7 +6,8 @@
 
 ## learn_CSS3:
 主要根据《css3：核心技术与案例实战》实操DEMO
-[Zebra 表格样式]:http://stefangabos.ro/wp-content/demos/Zebra_Form/?example=login&amp;template=vertical
-[CSS Tricks]:https://css-tricks.com/
-[Font Awesome]:http://fontawesome.io/
+- [Zebra 表格样式]:http://stefangabos.ro/wp-content/demos/Zebra_Form/?example=login&amp;template=vertical
+- [CSS Tricks]:https://css-tricks.com/
+- [Font Awesome]:http://fontawesome.io/
 - [Font Awesome中文文档]:http://fontawesome.dashgame.com/
+
