@@ -1,0 +1,153 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS3 的 border-radius 制作圆角 </title>
+<style type="text/css">
+
+	div{
+		margin-top: 20px;
+		padding:10px;
+	}
+
+	/*1． 水平和垂直半径一样*/
+
+	/*border-radius 只设置一个值*/
+	.border-radius-together-one {
+		width: 250px;
+		height: 100px;
+		border: 10px solid orange;
+		border-radius: 10px;
+	}
+
+	/*border-radius 只设置两个值*/
+	.border-radius-together-two {
+		width: 350px;height: 100px;
+		border: 10px solid orange;
+		border-radius: 10px 30px;
+	}
+
+	/*border-radius 只设置三个值*/
+	.border-radius-together-three {
+		width: 350px;
+		height: 100px;
+		border: 10px solid orange;
+		border-radius: 10px 50px 30px;
+	}
+
+	/*border-radius 只设置四个值*/
+	.border-radius-together-four {
+		width: 350px;
+		height: 100px;
+		border: 10px solid orange;
+		border-radius: 10px 20px 30px 40px;
+	}
+
+
+	/*2． 单独设置水平和垂直半径值*/
+
+	/*写法一*/
+
+	.border-radius-alone-version1 {
+		width: 350px;
+		height: 100px;
+		border: 10px solid orange;
+		border-radius: 60px 40px 30px 20px / 30px 20px 10px 5px;
+	}
+
+	/*写法二*/
+
+	.border-radius-alone-version2 {
+		width: 350px;
+		height: 100px;
+		border: 10px solid orange;
+		border-top-left-radius: 10px 50px;
+		border-top-right-radius: 20px 60px;
+		border-bottom-left-radius: 20px 60px;
+		border-bottom-right-radius: 30px 50px;
+	}
+
+	/*4. 特殊应用*/
+
+	/*外半径内半径*/
+
+	/*内径 = 外径 - 边框宽度*/
+
+	.border-radius-special-inner-radius {
+		width: 350px;
+		height: 100px;
+		border: 30px solid orange;/*边框值*/
+		border-radius: 35px;/*把圆角半径值调大些，比边框值大，这个时候内圆角就出来了*/
+	}
+
+	/*元素相邻边有不同的宽度*/
+
+	.border-radius-special-diffwidth {
+		width: 350px;
+		height: 100px;
+		border: 30px solid orange;
+		border-width: 20px 5px 30px 60px;
+		border-radius: 100px;
+	}
+	.border-radius-special-diffwidth-color {
+		width: 350px;
+		height: 100px;
+		border: 30px solid orange;
+		border-width: 35px 35px 60px 30px;
+		border-color: orange red green blue;
+		border-radius: 80px;
+	}
+
+	/*图片应用圆角*/
+	img {
+		border: 5px solid red;
+		border-radius: 10px;
+	}
+
+
+	/*表格的圆角应用*/
+	table {
+		margin: 10px;
+		border:5px solid orange;
+		border-radius: 10px;
+	}
+	.table1 {
+		border-collapse: collapse;
+	}
+	.table2 {
+		border-collapse: separate;
+	}
+</style>
+</head>
+<body>
+	<h1>共同设置</h1>
+	<div class="border-radius-together-one">border-radius 设置一个值</div>
+	<div class="border-radius-together-two">border-radius 设置两个值</div>
+	<div class="border-radius-together-three">border-radius 设置三个值</div>
+	<div class="border-radius-together-four">border-radius 设置四个值</div>
+
+	<h1>单独设置</h1>
+	<div class="border-radius-alone-version1">border-radius 单独设置 写法一</div>
+	<div class="border-radius-alone-version2">border-radius 单独设置 写法二</div>
+
+	<h1>特殊应用</h1>
+	<div class="border-radius-special-inner-radius">border-radius 外半径内半径</div>
+	<div class="border-radius-special-diffwidth">border-radius 元素相邻边有不同的宽度</div>
+	<div class="border-radius-special-diffwidth-color">border-radius 元素相邻边有不同的宽度 & 颜色</div>
+
+	<h1>图片应用圆角</h1>
+	<img src="img/slide1.jpeg" alt="" width="150" height="150" />
+
+	<h1>表格的圆角应用</h1>
+	<table class="table1">
+		<tr>
+			<td>border-collapse:collapse</td>
+		</tr>
+	</table>
+	<table class="table2">
+		<tr>
+			<td>border-collapse:separate</td>
+		</tr>
+	</table>
+</body>
+</html>

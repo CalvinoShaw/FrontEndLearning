@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.circle {
+			width: 100px;
+			height: 100px;
+			background-color: orange;
+			border-radius: 50%;
+		}
+
+
+		.semicircle-top {
+			background-color: #c9c;
+			margin: 30px;
+			width: 100px;/* 宽度为高度的 2 倍 */
+			height: 50px;
+			border-radius: 50px 50px 0 0;/* 圆角半径为高度的值 */
+		}
+		.semicircle-right {
+			background-color: #c9c;
+			margin: 30px;
+			height: 100px;/* 高度为宽度的 2 倍 */
+			width: 50px;
+			border-radius: 0 50px 50px 0;/* 圆角半径为宽度的值 */
+		}
+		.semicircle-bottom {
+			background-color: #c9c;
+			margin: 30px;
+			width: 100px;/* 宽度为高度的 2 倍 */
+			height: 50px;
+			border-radius: 0 0 50px 50px;/* 圆角半径为高度的值 */
+		}
+		.semicircle-left {
+			background-color: #c9c;
+			margin: 30px;
+			width: 50px;
+			height: 100px;/* 高度为宽度的 2 倍 */
+			border-radius: 50px 0 0 50px;/* 圆角半径为宽度的值 */
+		}
+
+
+		.quarterCircle-top {
+			background-color: #cfc;
+			margin: 30px;
+			width: 100px;
+			height: 100px;
+			border-radius: 100px 0 0 0;
+		}
+		.quarterCircle-right {
+			background-color: #cfc;
+			margin: 30px;
+			width: 100px;
+			height: 100px;
+			border-radius: 0 100px 0 0;
+		}
+		.quarterCircle-bottom {
+			background-color: #cfc;
+			margin: 30px;
+			width: 100px;
+			height: 100px;
+			border-radius: 0 0 100px 0;
+		}
+		.quarterCircle-left {
+			background-color: #cfc;
+			margin: 30px;
+			width: 100px;
+			height: 100px;
+			border-radius: 0 0 0 100px;
+		}
+
+
+
+		.oval-hov {
+			background-color: orange;
+			margin: 30px;
+			width: 100px;
+			height: 50px;
+			border-radius: 100px / 50px;
+		}
+		.oval-ver {
+			background-color: orange;
+			margin: 30px;
+			width: 50px;
+			height: 100px;
+			border-radius: 50px / 100px;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>园</h1>
+	<div class="circle"></div>
+
+	<h1>半圆</h1>
+	<div class="semicircle-top"></div>
+	<div class="semicircle-right"></div>
+	<div class="semicircle-bottom"></div>
+	<div class="semicircle-left"></div>
+
+	<h1>扇形</h1>
+	<div class="quarterCircle-top"></div>
+	<div class="quarterCircle-right"></div>
+	<div class="quarterCircle-bottom"></div>
+	<div class="quarterCircle-left"></div>
+
+
+	<h1>椭圆</h1>
+	<div class="oval-hov"></div>
+	<div class="oval-ver"></div>
+</body>
+</html>
