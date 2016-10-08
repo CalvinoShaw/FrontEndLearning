@@ -1,0 +1,148 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>box-shadow 设置单边阴影效果 </title>
+<style type="text/css">
+	
+	/*单边阴影效果*/
+
+	.box-shadow-single {
+		width: 200px;
+		height: 100px;
+		border-radius: 5px;
+		border: 1px solid #ccc;
+		margin: 20px;
+	}
+	.top {
+		box-shadow: 0 -2px 0 red;
+	}
+	.right {
+		box-shadow: 2px 0 0 green; /*单边阴影效果*/
+		box-shadow: 2px 0 5px green; /*添加一个模糊半径*/
+	}
+	.bottom {
+		box-shadow: 0 2px 0 blue;
+		box-shadow: 0 2px 5px blue;
+		box-shadow: 0 4px 5px -3px blue;
+	}
+	.left {
+		box-shadow: -2px 0 0 orange;
+	}
+
+	/*2. 四边相同阴影效果*/
+	
+	/*只设置阴影模糊半径和阴影颜色*/
+	.box-shadow-together-one{
+		width: 200px;
+		height: 100px;
+		border-radius: 10px;
+		border: 1px solid #ccc;
+		margin: 20px;
+		box-shadow: 0 0 10px #06c;
+	}
+	.box-shadow-together-two{
+		width: 200px;
+		height: 100px;
+		border-radius: 10px;
+		border: 1px solid #ccc;
+		margin: 20px;
+		box-shadow: 0 0 10px 10px #06c;
+	}
+
+	/*只设置扩展半径和阴影颜色*/
+	.box-shadow-together-three{
+		width: 200px;
+		height: 100px;
+		border-radius: 10px;
+		border: 1px solid #ccc;
+		margin: 20px;
+		box-shadow: 0 0 0 10px #06c;
+	}
+
+	.box-shadow-inner {
+		width: 200px;
+		height: 100px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		box-shadow: inset 3px 3px 10px #06c;
+	}
+
+	.no-inner-shadow-img {
+		box-shadow: inset 5px 5px 10px #06c;
+	}
+
+	.box-shadow-img-inner-shadow {
+		display: inline-block;/* 这个很重要 */
+		box-shadow: inset 5px 5px 10px #06c;
+	}
+	.img-inner-shadow {
+		position:relative;/* 这个很重要 */
+		z-index: -1;/* 这个很重要 */
+		vertical-align: top;
+	}
+
+
+	.box-shadow-multiple-shadow-one {
+		width: 200px;
+		height: 100px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		box-shadow: -5px 0 5px red, 0 5px 5px blue, 5px 0 5px green, 0 -5px 5px orange;
+	}
+	/*多层阴影 色框，不设置模糊半径，只设置扩展半径，并配合多个阴影颜色*/
+	.box-shadow-multiple-shadow-two {
+		width: 200px;
+		height: 100px;
+		border: 1px solid #ccc;
+		margin: 30px;
+		box-shadow: 0 0 0 1px red,
+					0 0 0 5px blue,
+					0 0 0 8px green,
+					0 0 0 12px yellow,
+					0 0 0 16px orange,
+					0 0 0 20px #06c,
+					0 0 0 24px lime;
+	}
+	.box-shadow-multiple-shadow-three {
+		width: 200px;
+		height: 100px;
+		border: 1px solid #ccc;
+		margin: 30px;
+		box-shadow: 0 0 0 30px red,
+					0 0 0 5px blue,
+					0 0 0 8px green,
+					0 0 0 12px yellow,
+					0 0 0 16px orange,
+					0 0 0 20px #06c,
+					0 0 0 24px lime;
+	}
+</style>
+</head>
+<body>
+	<h1>单边阴影效果</h1>
+	<div class="box-shadow-single top">单边阴影效果</div>
+	<div class="box-shadow-single right">单边阴影效果+<br><br>添加一个模糊半径</div>
+	<div class="box-shadow-single bottom">单边阴影效果+<br><br>添加一个模糊半径+<br><br>调整了阴影的位移量</div>
+	<div class="box-shadow-single left"></div>
+
+	<h1>四边相同阴影</h1>
+	<div class="box-shadow-together-one">只设置阴影模糊半径和阴影颜色</div>
+	<div class="box-shadow-together-two">添加 boxshadow 扩展半径</div>
+	<div class="box-shadow-together-three">只设置扩展半径和阴影颜色</div>
+
+	<h1>内阴影</h1>
+	<div class="box-shadow-inner">内阴影</div>
+	<img class="no-inner-shadow-img" src="img/slide1.jpeg" alt="" width="200" />box-shadow 的 inset 内阴影直接运用在 img 上没有任何效果
+	<div></div>
+	<div class="box-shadow-img-inner-shadow">
+		<img class="img-inner-shadow" src="img/slide1.jpeg" alt="" width="200" />
+	</div>改进思路：在 img 外添加一个容器标签， 并将将 box-shadow 的内阴影使用在 div 标签上
+
+
+	<h1>多层阴影</h1>
+	<div class="box-shadow-multiple-shadow-one">多层阴影</div>
+	<div class="box-shadow-multiple-shadow-two">多层阴影 色框<br><br>不设置模糊半径，只设置扩展半径， 并配合多个阴影颜色</div>
+	<div class="box-shadow-multiple-shadow-three">多层阴影 色框<br><br>如果前面的颜色太大，就会遮盖掉后面的</div>
+</body>
+</html>

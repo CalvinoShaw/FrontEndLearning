@@ -1,0 +1,27 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>border 与 box-shadow</title>
+<style type="text/css">
+	.box {
+		width: 200px;
+		height: 100px;
+		text-align: center;
+		line-height: 100px;
+		float: left;
+		margin: 30px;
+	}
+	.border{
+		border: 10px solid red;/*边框被计算了宽度*/
+	}
+	.box-shadow {
+		box-shadow: 0 0 0 10px red;/*box-shadow 的阴影被浏览器忽略不计，证实了 box-shadow 不会影响页面的任何布局*/
+	}
+</style>
+</head>
+<body>
+	<div class="box border">Border</div>
+	<div class="box box-shadow">Box-shadow</div>
+</body>
+</html>
