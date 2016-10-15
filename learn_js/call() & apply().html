@@ -1,0 +1,38 @@
+﻿<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+
+/*
+	1.作用
+	在特定的作用域总调用函数，等于设置函数体内this对象的值，以扩充函数赖以运行的作用域。
+ */
+
+
+window.color1="red";
+
+var o={
+	color1:"blue"
+};
+
+function getColor(color1,color2){
+	var color1 = "yellow";
+	alert(this.color1+" "+this.color2);
+}
+
+getColor.call(window,"red2");
+getColor.call(o);
+getColor.call(this);
+
+
+
+
+</script>
+</body>
+</html>
