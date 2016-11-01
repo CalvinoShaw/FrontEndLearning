@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.scale{
+			display: inline-block;
+			width:100px;
+			height:50px;
+			background:#cfc;
+			-webkit-transition:all .5s ease;
+			color:#000;
+			border-radius:5px 5px;
+			padding:5px;
+			border-color: #9f9;
+			text-align: center;
+			line-height: 50px;
+		}
+		.scale:hover{
+			-webkit-transform:scale(1.5);
+		     -moz-transform:scale(1.5);
+		       -o-transform:scale(1.5);
+		  -webkit-transform-origin:left top;/*-webkit-transform-origin设定了变换源点*/ /*left top 表示往右下放大*/
+		} 
+	</style>
+</head>
+<body>
+	<div class="scale">1</div>
+	<div class="scale">2</div>
+	<div class="scale">3</div>
+	<div class="scale">4</div>
+</body>
+</html>

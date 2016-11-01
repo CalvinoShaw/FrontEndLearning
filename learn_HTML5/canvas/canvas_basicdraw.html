@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>canvas - 基础绘图</title>
+</head>
+
+<body>
+
+  <!-- 浏览器canvas支持判断，如果不支持会显示文字 -->
+  <div><p>绘制-路径</p><canvas id="myCanvas" width="300" height="50">您的浏览器不支持canvas！</canvas></div>
+  
+  <div><p>绘制-矩形</p><canvas id="rect" width="300" height="200"></canvas></div>
+  <div><p>绘制-文本</p><canvas id="text" width="300" height="180"></canvas></div>
+  <div><p>绘制-圆形</p><canvas id="circle" width="300" height="200"></canvas></div>
+  <div><p>绘制-扇形</p><canvas id="sector" width="300" height="200"></canvas></div>
+  <div><p>绘制-渐变</p><canvas id="gradient" width="300" height="200"></canvas></div>
+  <div><p>绘制-阴影</p><canvas id="shadow" width="400" height="300"></canvas></div>
+
+  <script type="text/javascript">
+  	
+
+    /*
+      路径
+    */
+    
+  	// 获取canvas对象
+  	var path = document.getElementById('myCanvas');
+  	if (path.getContext) {
+  	  var path_ctx = path.getContext('2d');
+  	}
+  	path_ctx.beginPath(); // 开始路径绘制
+  	path_ctx.moveTo(20, 20); // 设置路径起点，坐标为(20,20)
+  	path_ctx.lineTo(200, 20); // 绘制一条到(200,20)的直线
+  	path_ctx.lineWidth = 1.0; // 设置线宽
+  	path_ctx.strokeStyle = '#CC0000'; // 设置线的颜色
+  	path_ctx.stroke(); // 进行线的着色，这时整条线才变得可见
+
+
+    /*
+      矩形：实心、空心
+    */
+    
+    // 获取canvas对象
+    var rect = document.getElementById('rect');
+    if (rect.getContext) {
+      var rect_ctx = rect.getContext('2d');
+    }
+  	rect_ctx.fillStyle = 'yellow';//实心矩形填充
+  	rect_ctx.fillRect(50, 50, 200, 100); //实心矩形四个顶点坐标
+
+  	rect_ctx.strokeRect(10,10,200,100); //空心矩形
+  	rect_ctx.clearRect(100,50,50,50);  //挖空矩形块
+
+
+    /*
+      文本：实心字、空心字
+     */
+    var text = document.getElementById('text');
+    if (text.getContext) {
+      var text_ctx = text.getContext('2d');
+    }
+    text_ctx.font = "Bold 20px 微软雅黑";  // 设置字体
+    text_ctx.textAlign = "left";// 设置对齐方式
+
+    text_ctx.fillStyle = "#008600"; // 设置实心字填充颜色
+    text_ctx.fillText("Hello!", 50, 50); // 设置字体内容，以及在画布上的位置
+
+    text_ctx.strokeText("Hello!", 50, 100); // 绘制空心字
+
+
+    /*
+      圆形
+     */
+  	var circle = document.getElementById('circle');
+    if (circle.getContext) {
+      var circle_ctx = circle.getContext('2d');
+    }
+  	circle_ctx.beginPath(); 
+  	circle_ctx.arc(90, 90, 50, 0, Math.PI*2, true); 
+  	circle_ctx.fillStyle = "#000000"; 
+  	circle_ctx.fill();
+
+
+    /*
+      弧形：360°角度=2π弧度
+    */
+    var sector = document.getElementById('sector');
+    if (sector.getContext) {
+      var sector_ctx = sector.getContext('2d');
+    } 
+  	sector_ctx.beginPath(); 
+  	sector_ctx.arc(90, 90, 50, 0, Math.PI*2, true); 
+  	sector_ctx.lineWidth = 1.0; 
+  	sector_ctx.strokeStyle = "#000"; 
+  	sector_ctx.stroke();
+
+
+    /*
+      渐变
+    */
+    var gradient = document.getElementById('gradient');
+    if (gradient.getContext) {
+      var gradient_ctx = gradient.getContext('2d');
+    }
+  	var myGradient = gradient_ctx.createLinearGradient(0, 0, 300, 200); 
+  	myGradient.addColorStop(0, "#99ffcc"); 
+  	myGradient.addColorStop(1, "#990066");
+  	gradient_ctx.fillStyle = myGradient;
+  	gradient_ctx.fillRect(10,10,200,100);
+
+
+    /*
+      阴影
+    */
+    var shadow = document.getElementById('shadow');
+    if (shadow.getContext) {
+      var shadow_ctx = shadow.getContext('2d');
+    }
+
+    //图形阴影
+  	shadow_ctx.shadowOffsetX = 10;
+  	shadow_ctx.shadowOffsetY = 10;
+  	shadow_ctx.shadowBlur = 10;
+  	shadow_ctx.shadowColor = "rgba(0,0,0,0.3)";
+
+  	shadow_ctx.fillStyle = "#CC0000"; 
+  	shadow_ctx.fillRect(10,10,200,100);
+
+
+    //字体阴影
+    shadow_ctx.shadowOffsetX = 5;
+    shadow_ctx.shadowOffsetY = 5;
+    shadow_ctx.shadowBlur = 10;
+    shadow_ctx.shadowColor = "rgba(0,0,0,0.7)";
+
+    shadow_ctx.font = "Bold 20px 宋体";  // 设置字体
+    shadow_ctx.textAlign = "left";// 设置对齐方式
+    shadow_ctx.fillStyle = "#008600"; // 设置实心字填充颜色
+    shadow_ctx.fillText("Hello!", 230, 50); // 设置字体内容，以及在画布上的位置
+
+  </script>
+</body>
+</html>

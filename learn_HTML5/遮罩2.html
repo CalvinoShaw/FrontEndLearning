@@ -1,0 +1,31 @@
+﻿<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+	<style type="text/css">  
+		.mask {    
+		  position: absolute;
+		  top: 0px;
+		  filter: alpha(opacity=60);
+		  background-color: #777;  
+		  z-index: 1002;
+		  left: 0px;  
+		  -moz-opacity:0.5;
+		       opacity:0.5;
+		}
+	</style>  
+</head>
+<body>
+	<div id="mask" class="mask"></div>
+	<a href="javascript:;" onclick="showMask()">点我显示遮罩层</a><br/>  
+	<script type="text/javascript">  
+		//兼容火狐、IE8  
+		function showMask(){  
+		  $("#mask").css("height",$(document).height());  
+		  $("#mask").css("width",$(document).width());  
+		  $("#mask").show();  
+		}  
+	</script>  
+</body>
+</html>

@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+
+<body>
+
+  <!-- 浏览器canvas支持判断，如果不支持会显示文字 -->
+  <canvas id="myCanvas" width="500" height="500">您的浏览器不支持canvas！</canvas>
+
+  <script type="text/javascript">
+  	
+  	// 获取canvas对象
+  	var canvas = document.getElementById('myCanvas');
+  	if (canvas.getContext) {
+  	  var ctx = canvas.getContext('2d');
+  	}
+
+  	ctx.beginPath(); // 开始路径绘制
+  	ctx.moveTo(20, 20); // 设置路径起点，坐标为(20,20)
+  	ctx.lineTo(200, 20); // 绘制一条到(200,20)的直线
+  	ctx.lineWidth = 1.0; // 设置线宽
+  	ctx.strokeStyle = '#CC0000'; // 设置线的颜色
+  	ctx.stroke(); // 进行线的着色，这时整条线才变得可见
+
+  	ctx.fillStyle = 'yellow';
+  	ctx.fillRect(50, 50, 200, 100); 
+
+  	ctx.strokeRect(10,10,200,100); 
+
+  	ctx.clearRect(100,50,50,50);  
+
+
+
+  	ctx.font = "Bold 20px Arial"; // ÉèÖÃ×ÖÌå
+  	ctx.textAlign = "left";// ÉèÖÃ¶ÔÆë·½Ê½
+  	ctx.fillStyle = "#008600"; // ÉèÖÃÌî³äÑÕÉ«
+  	ctx.fillText("Hello!", 10, 50); // ÉèÖÃ×ÖÌåÄÚÈÝ£¬ÒÔ¼°ÔÚ»­²¼ÉÏµÄÎ»ÖÃ
+  	ctx.strokeText("Hello!", 10, 100); // »æÖÆ¿ÕÐÄ×Ö
+
+
+
+  	// ctx.arc(Ô²ÐÄ×ø±êx, Ô²ÐÄ×ø±êy, °ë¾¶radius, ÆðÊ¼½Ç¶ÈstartAngle, ÖÕÖ¹½Ç¶ÈendAngle, Ë³ÄæÊ±Õëanticlockwise);
+  	
+  	ctx.beginPath(); 
+  	ctx.arc(160, 160, 50, 0, Math.PI*2, true); 
+  	ctx.fillStyle = "#000000"; 
+  	ctx.fill();
+
+
+  	ctx.beginPath(); 
+  	ctx.arc(60, 60, 50, 0, Math.PI*2, true); 
+  	ctx.lineWidth = 1.0; 
+  	ctx.strokeStyle = "#000"; 
+  	ctx.stroke();
+
+
+  	var myGradient = ctx.createLinearGradient(0, 0, 0, 160); 
+  	myGradient.addColorStop(0, "#BABABA"); 
+  	myGradient.addColorStop(1, "#636363");
+  	ctx.fillStyle = myGradient;
+  	ctx.fillRect(10,10,200,100);
+
+
+
+
+  	ctx.shadowOffsetX = 10; // ÉèÖÃË®Æ½Î»ÒÆ
+  	ctx.shadowOffsetY = 10; // ÉèÖÃ´¹Ö±Î»ÒÆ
+  	ctx.shadowBlur = 5; // ÉèÖÃÄ£ºý¶È
+  	ctx.shadowColor = "rgba(0,0,0,0.5)"; // ÉèÖÃÒõÓ°ÑÕÉ«
+
+  	ctx.fillStyle = "#CC0000"; 
+  	ctx.fillRect(10,10,200,100);
+
+
+
+  	var image = new Image();
+
+  	image.onload = function() {
+  	  var canvas = document.createElement('canvas');
+  	  canvas.width = image.width;
+  	  canvas.height = image.height;
+  	  canvas.getContext('2d').drawImage(image, 0, 0);
+  	  document.body.appendChild(image);// ²åÈëÒ³Ãæµ×²¿
+  	  return canvas;
+  	}
+
+  	image.src = 'image.png';
+
+
+
+
+  	var posX = 20,
+  	    posY = 100;
+    var vx = 10,
+        vy = -10,
+        gravity = 1;
+  	setInterval(function() {
+  		posX += vx;
+  		posY += vy
+
+		if (posY > canvas.height * 0.75) {
+	          vy *= -0.6;
+	          vx *= 0.75;
+	          posY = canvas.height * 0.75;
+	    }
+  				
+  		vy += gravity;
+
+  		ctx.fillStyle = "black";
+  	    ctx.fillRect(0,0,canvas.width, canvas.height);
+
+  		posX += 1;
+  		posY += 0.25;
+
+
+  		ctx.beginPath();
+  		ctx.fillStyle = "white";
+
+  		ctx.arc(posX, posY, 10, 0, Math.PI*2, true); 
+  		ctx.closePath();
+  		ctx.fill();
+  	}, 30);
+
+  </script>
+</body>
+</html>

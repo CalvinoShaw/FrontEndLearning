@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <title>新建待办事项</title>
+  <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet">
+  <script type="text/javascript" src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="http://g.alicdn.com/sj/dpl/1.5.1/js/sui.min.js"></script>
+  <style type="text/css">
+		body{
+			margin: 0 auto;
+			width: 600px;
+			margin-top:100px;
+		}
+  </style>
+</head>
+<body>
+
+	<div class="container">
+		<a href="#" data-toggle="tooltip" title="first tooltip">hover over me</a>
+
+		<ul class="example">
+		  <li><a href="#" 
+		  			 data-placement="right" 
+		  			 data-toggle="tooltip" 
+		  			 title="浮出在<b>right</b>的tooltip">看right</a></li>
+		  <li><a href="#" 
+		  			 data-placement="bottom" 
+		  			 data-toggle="tooltip" 
+		  			 title="浮出在<b>bottom</b>的tooltip">看bottom</a></li>
+		</ul>
+
+		<ul class="example">
+		  <li>
+		  	<a href="javascript:void(0)" 
+		  		 data-trigger="click" 
+		  		 data-toggle="tooltip" 
+		  		 data-placement="top" 
+		  		 data-widthlimit="500px" 
+		  		 title="aaaaaaaaaaaaaaaaaaaaaaaaaaa">点击后出提示widthlimit:'500px'</a>
+		  </li>
+		  <li>
+		  	<a href="javascript:void(0)" 
+		  		 data-trigger="click" 
+		  		 data-toggle="tooltip" 
+		  		 data-placement="bottom" 
+		  		 data-widthlimit="false" 
+		  		 title="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<pre>widthlimit:false</pre>">点击后出提示widthlimit:'false'</a>
+		  </li>
+		  <li>
+		  	<a href="javascript:void(0)" 
+		  		 data-trigger="click" 
+		  		 data-toggle="tooltip" 
+		  		 data-placement="bottom" 
+		  		 data-widthlimit="true" 
+		  		 title="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<pre>widthlimit:true</pre>">点击后出提示widthlimit:'true'</a>
+		  </li>
+		</ul>
+
+		<ul class="example">
+		  <li>
+		  	<a href="javascript:void(0)" 
+		  		 data-placement="right" 
+		  		 data-toggle="tooltip" 
+		  		 data-type="attention" 
+		  		 title="强调tooltip">right opt.type = 'attention'</a>
+		  </li>
+		  <li>
+		  	<a href="javascript:void(0)" 
+		  	   data-placement="bottom" 
+		  	   data-toggle="tooltip" 
+		  	   data-type="attention" 
+		  	   title="强调tooltip">bottom opt.type = 'attention'</a>
+		  </li>
+		  <li>
+		  	<a href="javascript:void(0)" 
+		  	   data-placement="bottom" 
+		  	   data-toggle="tooltip" 
+		  	   data-type="attention" 
+		  	   title="强调tooltip">bottom opt.type = 'attention'</a>
+		  </li>
+		</ul>
+		<ul class="example">
+		  <li>
+		  	<a style="display:inline-block;width:120px;height:100px;background: #ccc" 
+		  		 href="javascript:void(0)" 
+		  		 data-placement="right" 
+		  		 data-trigger="hover" 
+		  		 data-toggle="tooltip" 
+		  		 data-align="bottom" 
+		  		 title="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">opt.align='bottom'</a>
+		  </li>
+		  <li>
+		  	<a style="display:inline-block;width:120px;height:100px;background: #ccc" 
+		  		 href="javascript:void(0)" 
+		  		 data-placement="bottom" 
+		  		 data-trigger="hover" 
+		  		 data-toggle="tooltip" 
+		  		 data-align="center" 
+		  		 title="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">opt.align='center'</a>
+		  </li>
+		</ul>
+	</div>
+
+	<h1>对以上 sample 的说明（注释）</h1>
+
+	<div>
+	<!-- 
+			 href="javascript:void(0)" 
+		   data-toggle="tooltip" 
+		   title="这是一个提示"
+		   data-trigger="hover" 可选。有 hover 或 click ，默认click
+		   data-placement="bottom" 可选。
+		   data-type="attention"  可选。不设则为白色框
+		   data-align="center" 可选。对齐方式
+		   data-widthlimit="true" 可选。长度有没有限制，true或者false
+		   
+	-->
+		<a href="javascript:void(0)" 
+		   data-toggle="tooltip" 
+		   data-trigger="hover" 
+		   data-placement="bottom" 
+		   data-type="attention"  
+		   data-align="center" 
+		   data-widthlimit="true" 
+		   title="这是一个提示">啊啊啊啊</a>
+
+		<p>href="javascript:void(0)" </p>
+		<p>data-toggle="tooltip" </p>
+		<p>title="提示内容"</p>
+		<p>可选：data-trigger="hover" 可选。有 hover 或 click ，默认click</p>
+		<p>可选：data-placement="bottom" </p>
+		<p>可选：data-type="attention"  可选。不设则为白色框</p>
+		<p>可选：data-align="center" 对齐方式</p>
+		<p>可选：data-widthlimit="true" 长度有没有限制，true或者false</p>
+		
+	</div>
+
+</body>
+</html>

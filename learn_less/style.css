@@ -1,0 +1,143 @@
+/*------------------
+			规定编码
+--------------------*/
+@charset "utf-8";
+/*------------------
+    	预置样式
+--------------------*/
+body {
+  background-color: #666699;
+}
+div {
+  margin-bottom: 20px;
+  text-align: center;
+}
+/*------------------
+				变量
+--------------------*/
+.yellow {
+  height: 100px;
+  width: 100px;
+  background-color: #ffff99;
+}
+/*-------------------
+			混合的使用
+---------------------*/
+.pink {
+  height: 140px;
+  width: 140px;
+  background-color: #fcc;
+}
+.border1 {
+  border: solid 1px black;
+}
+/* 混合 */
+.pink1 {
+  height: 140px;
+  width: 140px;
+  background-color: #fcc;
+  border: solid 1px black;
+}
+/* 混合 - 带参 */
+.pink2 {
+  height: 140px;
+  width: 140px;
+  background-color: #fcc;
+  border: solid 20px #000000;
+}
+/* 混合 - 带参，带默认值 */
+.pink3 {
+  height: 140px;
+  width: 140px;
+  background-color: #fcc;
+  border: solid 40px #000000;
+}
+/*-----------------
+			匹配模式
+------------------- */
+.green {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-width: 10px;
+  border-color: transparent transparent #9c6 #9c6;
+  /* 上、右、下、左 */
+  border-style: solid;
+}
+/*实际上底下这四个方向的代码还是可以抽出来复用的，只要传一个角度参数就行了，这样符合 less 的哲学*/
+.green-top {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-width: 10px;
+  border-color: transparent transparent #9c6 #9c6;
+  /* 上、右、下、左 */
+  border-style: solid;
+  -webkit-transform: rotate(135deg);
+  /* Safari 和 Chrome */
+  -moz-transform: rotate(135deg);
+  /* Firefox */
+  -ms-transform: rotate(135deg);
+  /* IE 9 */
+  -o-transform: rotate(135deg);
+  /* Opera */
+  transform: rotate(135deg);
+  /* 旋转都是顺时针的 */
+}
+.green-right {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-width: 10px;
+  border-color: transparent transparent #9c6 #9c6;
+  /* 上、右、下、左 */
+  border-style: solid;
+  -webkit-transform: rotate(225deg);
+  /* Safari 和 Chrome */
+  -moz-transform: rotate(225deg);
+  /* Firefox */
+  -ms-transform: rotate(225deg);
+  /* IE 9 */
+  -o-transform: rotate(225deg);
+  /* Opera */
+  transform: rotate(225deg);
+  /* 旋转都是顺时针的 */
+}
+.green-bottom {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-width: 10px;
+  border-color: transparent transparent #9c6 #9c6;
+  /* 上、右、下、左 */
+  border-style: solid;
+  -webkit-transform: rotate(315deg);
+  /* Safari 和 Chrome */
+  -moz-transform: rotate(315deg);
+  /* Firefox */
+  -ms-transform: rotate(315deg);
+  /* IE 9 */
+  -o-transform: rotate(315deg);
+  /* Opera */
+  transform: rotate(315deg);
+  /* 旋转都是顺时针的 */
+}
+.green-left {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-width: 10px;
+  border-color: transparent transparent #9c6 #9c6;
+  /* 上、右、下、左 */
+  border-style: solid;
+  -webkit-transform: rotate(45deg);
+  /* Safari 和 Chrome */
+  -moz-transform: rotate(45deg);
+  /* Firefox */
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -o-transform: rotate(45deg);
+  /* Opera */
+  transform: rotate(45deg);
+  /* 旋转都是顺时针的 */
+}

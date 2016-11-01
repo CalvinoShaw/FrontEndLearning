@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>canvas动画</title>
+</head>
+
+<body>
+
+  <!-- 浏览器canvas支持判断，如果不支持会显示文字 -->
+  <canvas id="myCanvas" width="500" height="500">您的浏览器不支持canvas！</canvas>
+
+
+  <script type="text/javascript">
+  	
+  	// 获取canvas对象
+  	var canvas = document.getElementById('myCanvas');
+  	if (canvas.getContext) {
+  	  var ctx = canvas.getContext('2d');
+  	}
+
+  	var posX = 20,
+  	    posY = 100;
+    var vx = 10,
+        vy = -10,
+        gravity = 1;
+  	setInterval(function() {
+  		posX += vx;
+  		posY += vy
+
+		if (posY > canvas.height * 0.75) {
+	          vy *= -0.6;
+	          vx *= 0.75;
+	          posY = canvas.height * 0.75;
+	    }
+  				
+  		vy += gravity;
+
+  		ctx.fillStyle = "black";
+  	  ctx.fillRect(0,0,canvas.width, canvas.height);
+
+  		posX += 1;
+  		posY += 0.25;
+
+
+  		ctx.beginPath();
+  		ctx.fillStyle = "white";
+
+  		ctx.arc(posX, posY, 10, 0, Math.PI*2, true); 
+  		ctx.closePath();
+  		ctx.fill();
+  	}, 30);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div{
+			margin: 30px;
+		}
+		.triangle1{
+			width: 0px;/* 高宽设为0即为三角 */
+			height: 0px;
+			overflow: hidden;
+
+			border-width: 100px;
+			border-color: transparent transparent red red;/* 上、右、下、左 */
+			border-style: solid;
+			/*border-style: dashed dashed solid dashed;*/ /*兼容 IE6*/
+
+		}
+		.triangle2{
+			width: 30px;
+			height: 30px;
+			overflow: hidden;
+
+			border-width: 10px;
+			border-color: transparent transparent red red;/* 上、右、下、左 */
+			border-style: solid;
+		}
+		.triangle3{
+			width: 30px;
+			height: 30px;
+			overflow: hidden;
+
+			border-width: 10px;
+			border-color: transparent transparent red red;/* 上、右、下、左 */
+			border-style: solid;
+
+			-webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+			   -moz-transform:rotate(45deg); /* Firefox */
+			    -ms-transform:rotate(45deg); /* IE 9 */
+			     -o-transform:rotate(45deg); /* Opera */
+			        transform:rotate(45deg); /* 旋转都是顺时针的 */
+		}
+	</style>
+</head>
+<body>
+	<div class="triangle1"></div>
+	<div class="triangle2"></div>
+	<div class="triangle3"></div>
+</body>
+</html>
