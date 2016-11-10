@@ -1,0 +1,13 @@
+﻿<!doctype html>
+<html ng-app>
+    <head>
+        <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+        <title>双向数据绑定</title>
+    </head>
+    <body>
+    		<!-- 键入的名称将立即更新显示在问候语中 -->
+    		Your name: <input type="text" ng-model="yourname" placeholder="World">
+    		<hr>
+        Hello {{yourname || 'World'}}!
+    </body>
+</html>
